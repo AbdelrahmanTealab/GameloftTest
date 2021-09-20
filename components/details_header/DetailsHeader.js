@@ -11,8 +11,6 @@ export default class DetailsHeader extends Component {
   }
 
   componentDidMount(){
-    
-    console.log(this.props.imageUrl);
     this.setState({
       imageUrl: this.props.imageUrl != null ? this.props.imageUrl.replace("{w}", "300").replace("{h}", "300") : null,
       bgColor: this.props.bgColor != null ? this.props.bgColor : null
