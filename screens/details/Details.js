@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, Linking } from 'react-native';
+import { View, Text, FlatList, Linking, ActivityIndicator } from 'react-native';
 import {styles} from './DetailsStyle';
 import DetailsCard from '../../components/details_card/DetailsCard';
 import DetailsHeader from '../../components/details_header/DetailsHeader';
@@ -74,6 +74,7 @@ export default class Details extends Component {
             data={this.state.DATA}
             ListHeaderComponent={()=><DetailsHeader bgColor={this.state.bgColor} imageUrl={this.state.imageUrl} />}
             renderItem={({item}) => <DetailsCard style={styles.card} item={item} pressed={()=>this.playMusic()} />}
+            ListEmptyComponent={()=> <ActivityIndicator style={styles.indicator} size="large" color="#ffffff55" />}
             bounces={true}
             keyExtractor={item => item.id}   
         />

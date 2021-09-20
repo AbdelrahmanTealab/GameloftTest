@@ -4,6 +4,7 @@ import {
     View, 
     Text,
     FlatList,
+    ActivityIndicator
     } 
 from 'react-native';
 import PlaylistCard from '../../components/playlist_card/PlaylistCard';
@@ -87,7 +88,7 @@ export default class Playlists extends Component {
             }
             bounces={true}
             keyExtractor={item => item.id}   
-            ListEmptyComponent={()=> <Text >Loading...</Text>}
+            ListEmptyComponent={()=> <ActivityIndicator style={styles.indicator} size="large" color="#ffffff55" />}
         />
       </View>
     );

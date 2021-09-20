@@ -12,5 +12,13 @@ export const styles = StyleSheet.create({
   },
   card:{
       alignSelf:'center',
-  }
+  },
+    indicator:{
+    position:'absolute',
+    left:'50%',
+    top:'50%',
+    bottom:'50%',
+    right:'50%',
+    alignSelf: 'center',
+  },
 })
