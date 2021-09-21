@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, Linking, ActivityIndicator } from 'react-native';
+import { View, Text, FlatList, Linking, ActivityIndicator, NativeModules } from 'react-native';
 import {styles} from './DetailsStyle';
 import DetailsCard from '../../components/details_card/DetailsCard';
 import DetailsHeader from '../../components/details_header/DetailsHeader';
 
+const {MusicKitModule} = NativeModules;
 
 export default class Details extends Component {
   constructor(props) {
@@ -56,10 +57,11 @@ export default class Details extends Component {
           });
   }
 
-  componentDidMount(){
+  async componentDidMount(){
     const {bgColor,imageUrl} = this.props.route.params
     this.setState({imageUrl:imageUrl,bgColor:bgColor})
     this.fetchSession()
+    await console.log(MusicKitModule);
   }
 
   playMusic(){
