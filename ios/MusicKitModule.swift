@@ -8,14 +8,26 @@
 import Foundation
 import MusicKit
 import MediaPlayer
+//The below code is my attempt to
+//solve the struct problem by
+//creating work-arounds to use
+//Swift structs in Objective-C
+
+//please note that the use of force unwrapping
+//was ONLY for debugging just to make
+//sure things were working until
+//i provide a stable solution
 
 @available(iOS 15.0, *)
 @objc(MusicKitModule)
 class MusicKitModule: NSObject{
   
-//  var playlist: Playlist
-//  var tracks: MusicItemCollection<Track>?
 
+//  var playlist: Playlist
+//
+//
+//  var tracks: MusicItemCollection<Track>?
+//
 //  private let player = ApplicationMusicPlayer.shared
 //  private var playerState = ApplicationMusicPlayer.shared.state
 //  private var isPlaying: Bool {
@@ -23,19 +35,18 @@ class MusicKitModule: NSObject{
 //  }
 //  private var isPlaybackQueueSet = false
 //  private var musicSubscription: MusicSubscription?
-  
-  //  private func loadTracks() async throws {
-  //      let detailedAlbum = try await album.with([.artists, .tracks])
-  //      let artist = try await detailedAlbum.artists?.first?.with([.albums])
-  //      update(tracks: detailedAlbum.tracks, relatedAlbums: artist?.albums)
-  //  }
-  
+//
+////    private func loadTracks() async throws {
+////        let detailedPlaylist = try await playlist.with([.tracks])
+////        update(tracks: detailedPlaylist.tracks)
+////    }
+//
 //  @objc
 //  init(from playlist: AnyObject) {
-//    self.playlist = playlist as? Playlist ?? Playlist.init(from: <#T##Decoder#>)
-//    self.tracks = (playlist as? Playlist).tracks! ?? nil
+//    self.playlist = playlist as! Playlist
+//    self.tracks = (playlist as! Playlist).tracks!
 //  }
-  
+//
 //  @objc
 //  private func beginPlaying() {
 //      Task {
@@ -46,12 +57,12 @@ class MusicKitModule: NSObject{
 //          }
 //      }
 //  }
-//  
+//
 //  @objc
 //  private func handleTrackSelected(_ track: AnyObject, loadedTracks: Any) {
 //    let myTrack = track as! Track
 //    let myLoadedTracks = loadedTracks as! MusicItemCollection<Track>
-//    
+//
 //      player.queue = ApplicationMusicPlayer.Queue(for: myLoadedTracks, startingAt: myTrack)
 //      isPlaybackQueueSet = true
 //      beginPlaying()
